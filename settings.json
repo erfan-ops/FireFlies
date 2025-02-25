@@ -1,0 +1,31 @@
+{
+  "fps": 120,
+  "background-colors": [
+    [ 0, 0, 0, 1 ],
+    [ 0.02, 0, 0.05, 1 ],
+    [ 0.05, 0, 0.02, 1 ]
+  ],
+
+  "fireflies": {
+    "max-radius": 15,
+    "segments": 30,
+    "colors": [
+      [ 1, 0.8, 0.6, 0 ],
+      [ 1, 0.8, 0, 0 ],
+      [ 1, 0.25, 0.15, 0 ],
+      [ 1, 0, 0, 0 ],
+      [ 1, 1, 0, 0 ],
+      [ 1, 0, 0.4, 0 ]
+    ],
+    "min-alpha": 0.25,
+    "max-alpha": 1,
+    "increase-brightness-speed": 1,
+    "decrease-brightness-speed": 0.25,
+    "count": 230,
+    "max-speed": 20
+  },
+
+  "mouse-radius": 300,
+  "mouse-gravity": 100000,
+  "min-distance": 15
+}
