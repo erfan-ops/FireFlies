@@ -21,6 +21,7 @@ Settings loadSettings(const std::string& filename) {
 	settings.fireFlies.brightenSpeed = j["fireflies"]["increase-brightness-speed"];
 	settings.fireFlies.darkenSpeed = j["fireflies"]["decrease-brightness-speed"];
 	settings.fireFlies.count = j["fireflies"]["count"];
+	settings.fireFlies.minSpeed = j["fireflies"]["min-speed"];
 	settings.fireFlies.maxSpeed = j["fireflies"]["max-speed"];
 
 	settings.mouseRadius = j["mouse-radius"];

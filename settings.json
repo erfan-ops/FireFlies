@@ -22,6 +22,7 @@
     "increase-brightness-speed": 1,
     "decrease-brightness-speed": 0.25,
     "count": 230,
+    "min-speed": 20,
     "max-speed": 20
   },
 

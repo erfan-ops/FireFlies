@@ -13,9 +13,11 @@
 #include "fireFly.h"
 #include "rendering.h"
 
+#define TAU_F 6.283185307179586
+
 constinit bool running = true;
 
-typedef struct FPOINT {
+struct FPOINT {
 	float x;
 	float y;
 };
@@ -192,14 +194,16 @@ int CALLBACK WinMain(
 
 	// Fill the array with FireFly objects
 	for (int i = 0; i < settings.fireFlies.count; ++i) {
-		fireFlies[i] = FireFly(
-			randomUniform(roffsetBounds, woffsetBounds),
-			randomUniform(roffsetBounds, hoffsetBounds),
-			randomUniform(-settings.fireFlies.maxSpeed, settings.fireFlies.maxSpeed),
-			randomUniform(-settings.fireFlies.maxSpeed, settings.fireFlies.maxSpeed),
-			settings.fireFlies.maxRadius,
-			settings.fireFlies.colors[randomInt(0, settings.fireFlies.colors.size() - 1)]
-		);
+		FireFly& fireFly = fireFlies[i];
+		float speed = randomUniform(-settings.fireFlies.minSpeed, settings.fireFlies.maxSpeed);
+		float angle = randomUniform(0, TAU_F);
+
+		fireFly.x = randomUniform(roffsetBounds, woffsetBounds);
+		fireFly.y = randomUniform(roffsetBounds, hoffsetBounds);
+		fireFly.speedx = std::cosf(angle)*speed;
+		fireFly.speedy = std::sinf(angle)*speed;
+		fireFly.radius = settings.fireFlies.maxRadius;
+		fireFly.color = settings.fireFlies.colors[randomInt(0, static_cast<int>(settings.fireFlies.colors.size()) - 1)];
 	}
 
 	auto newF = std::chrono::high_resolution_clock::now();

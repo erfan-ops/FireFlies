@@ -18,6 +18,7 @@ struct Settings {
 		float brightenSpeed;
 		float darkenSpeed;
 		int count;
+		float minSpeed;
 		float maxSpeed;
 	} fireFlies;
 
