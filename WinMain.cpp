@@ -238,16 +238,20 @@ int CALLBACK WinMain(
 			fireFly.move(dt);
 
 			if (fireFly.x < roffsetBounds) {
+				fireFly.x -= (fireFly.x - roffsetBounds) * 2;
 				fireFly.speedx = std::abs(fireFly.speedx);
 			}
 			else if (fireFly.x > woffsetBounds) {
+				fireFly.x -= (fireFly.x - woffsetBounds) * 2;
 				fireFly.speedx = -std::abs(fireFly.speedx);
 			}
 
 			if (fireFly.y < roffsetBounds) {
+				fireFly.y -= (fireFly.y - roffsetBounds) * 2;
 				fireFly.speedy = std::abs(fireFly.speedy);
 			}
 			else if (fireFly.y > hoffsetBounds) {
+				fireFly.y -= (fireFly.y - hoffsetBounds) * 2;
 				fireFly.speedy = -std::abs(fireFly.speedy);
 			}
 
